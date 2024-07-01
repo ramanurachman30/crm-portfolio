@@ -1,32 +1,51 @@
-import { useState } from 'react';
-import Dropdown from '@/Components/Dropdown';
-import NavLink from '@/Components/NavLink';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
-import { Link } from '@inertiajs/react';
-import ApplicationLogoDashboard from '@/Components/ApplicationLogoDashboard';
+import { useState } from "react";
+import Dropdown from "@/Components/Dropdown";
+import NavLink from "@/Components/NavLink";
+import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
+import { Link } from "@inertiajs/react";
+import ApplicationLogoDashboard from "@/Components/ApplicationLogoDashboard";
+import TextInput from "@/Components/TextInput";
 
 export default function Authenticated({ user, header, children }) {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+    const [showingNavigationDropdown, setShowingNavigationDropdown] =
+        useState(false);
 
     return (
         <div className="min-h-screen bg-gray-100">
-            <nav className="bg-white border-b border-gray-100">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-16">
-                        <div className="flex">
-                            <div className="shrink-0 flex items-center">
-                                <Link href="/">
-                                    <ApplicationLogoDashboard className="block h-9 w-auto fill-current text-gray-800" />
-                                </Link>
-                            </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
-                                    Dashboard
-                                </NavLink>
-                            </div>
+            <div class="page-container pb-5">
+                <div className="page-header">
+                    <nav className="navbar navbar-expand-lg d-flex justify-content-between">
+                        <div className="" id="navbarNav">
+                            <ul className="navbar-nav" id="leftNav">
+                                <li className="nav-item">
+                                    <a
+                                        className="nav-link"
+                                        id="sidebar-toggle"
+                                        href="#"
+                                    >
+                                        <i data-feather="arrow-left"></i>
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">
+                                        Home
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">
+                                        Settings
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">
+                                        Help
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-
+                        <Link href="/">
+                            <ApplicationLogoDashboard className="navbar-brand block h-9 w-auto fill-current text-gray-800" />
+                        </Link>
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
                             <div className="ms-3 relative">
                                 <Dropdown>
@@ -63,63 +82,49 @@ export default function Authenticated({ user, header, children }) {
                                 </Dropdown>
                             </div>
                         </div>
-
-                        <div className="-me-2 flex items-center sm:hidden">
-                            <button
-                                onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
-                                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
+                    </nav>
+                </div>
+                <div className="page-sidebar">
+                    <ul className="list-unstyled accordion-menu">
+                        <li className="sidebar-title">Main</li>
+                        <li className="active-page">
+                            <Link
+                                href={route("dashboard")}
+                                className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
-                                <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                    <path
-                                        className={!showingNavigationDropdown ? 'inline-flex' : 'hidden'}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                    <path
-                                        className={showingNavigationDropdown ? 'inline-flex' : 'hidden'}
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+                                Dashboard
+                            </Link>
+                        </li>
+                        <li className="sidebar-title">Apps</li>
+                        <li>
+                            <a href="email.html">
+                                <i data-feather="inbox"></i>Email
+                            </a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <i data-feather="calendar"></i>Calendar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="social.html">
+                                <i data-feather="user"></i>Social
+                            </a>
+                        </li>
+                        <li>
+                            <a href="file-manager.html">
+                                <i data-feather="message-circle"></i>File
+                                Manager
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
-                    <div className="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
-                            Dashboard
-                        </ResponsiveNavLink>
-                    </div>
+                <div className="page-content">
+                    <main>{children}</main>
 
-                    <div className="pt-4 pb-1 border-t border-gray-200">
-                        <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">{user.name}</div>
-                            <div className="font-medium text-sm text-gray-500">{user.email}</div>
-                        </div>
-
-                        <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink href={route('profile.edit')}>Profile</ResponsiveNavLink>
-                            <ResponsiveNavLink method="post" href={route('logout')} as="button">
-                                Log Out
-                            </ResponsiveNavLink>
-                        </div>
-                    </div>
                 </div>
-            </nav>
-
-            {header && (
-                <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
-                </header>
-            )}
-
-            <main>{children}</main>
+            </div>
         </div>
     );
 }

@@ -17,7 +17,7 @@
 [1. Global Styles]
 ------------------------------------------------------------*/
 
-html, 
+html,
 body {
     font-size: 14px;
     width: 100%;
@@ -72,7 +72,7 @@ a:focus {
     text-decoration: none!important;
 }
 
-b, 
+b,
 strong,
 .bold {
     font-weight: 600;
@@ -1090,7 +1090,7 @@ body.sidebar-hidden .main-wrapper {
 }
 
 .popover-header {
-    padding: 15px 25px 0;   
+    padding: 15px 25px 0;
     background: transparent;
     border-bottom-color: transparent;
     font-size: 14px;
@@ -1098,7 +1098,7 @@ body.sidebar-hidden .main-wrapper {
 }
 
 .popover-body {
-    padding: 15px 25px; 
+    padding: 15px 25px;
     font-size: 13px;
     color: #7D7D83;
 }
@@ -1987,7 +1987,7 @@ body.modal-open {
 
 .form-check-input:checked {
     background-color: #9465fcea;
-    border-color: #9465fcea; 
+    border-color: #9465fcea;
 }
 
 .input-group-text {
@@ -2730,7 +2730,7 @@ body.error-page .container {
     background: linear-gradient(rgba(0,0,0,.3), black);
 }
 
-.profile-header {  
+.profile-header {
     display: block;
     width: 100%;
     margin-top: -110px;
@@ -3281,7 +3281,7 @@ ul.profile-about-list li.profile-about-list-buttons {
         transform: scale(0, 1);
         z-index: 999;
     }
-    
+
     body.sidebar-hidden .page-sidebar {
         transform: scale(1, 1);
     }
@@ -3289,7 +3289,7 @@ ul.profile-about-list li.profile-about-list-buttons {
     .page-content {
         margin-left: 0;
     }
-    
+
     .page-content .main-wrapper {
         padding-left: 0;
     }
@@ -3307,16 +3307,16 @@ ul.profile-about-list li.profile-about-list-buttons {
     .profile-header {
         margin-top: -60px;
     }
-    
+
     .profile-cover {
         height: 200px;
     }
-    
+
     .profile-img {
         display: block;
         float: none!important;
     }
-    
+
     .profile-img img {
         margin: 0 auto;
         display: inherit;
@@ -3324,39 +3324,39 @@ ul.profile-about-list li.profile-about-list-buttons {
         height: 100px!important;
         border-radius: 100px!important;
     }
-    
+
     .profile-name {
         display: block;
         float: none!important;
         text-align: center;
         margin: 0!important;
     }
-    
+
     .profile-name h3 {
         color: #333!important;
     }
-    
+
     .profile-header .profile-header-menu {
         display: block;
         float: none;
         margin: 0;
         text-align: center;
     }
-    
+
     .profile-header .profile-header-menu ul li {
         display: block;
         padding: 0;
         width: calc(100%/6);
         text-align: center;
     }
-    
+
     .profile-header .profile-header-menu ul li a {
         padding: 10px;
         text-align: center;
         height: auto!important;
     }
-    
-    .profile-header .profile-header-menu ul li a:hover, 
+
+    .profile-header .profile-header-menu ul li a:hover,
     .profile-header .profile-header-menu ul li a.active {
         color: #000;
     }
@@ -3374,7 +3374,7 @@ ul.profile-about-list li.profile-about-list-buttons {
     .error-image {
         display: none;
     }
-    
+
     .error-info {
         width: 100%;
         text-align: center;

@@ -16,13 +16,12 @@
         <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
         <link href="{{ asset('../../assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('../../assets/plugins/font-awesome/css/all.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('../../assets/plugins/perfectscroll/perfect-scrollbar.css') }}" rel="stylesheet">
-        <link href="{{ asset('../../assets/plugins/apexcharts/apexcharts.css') }}" rel="stylesheet">
+        {{-- <link href="{{ asset('../../assets/plugins/perfectscroll/perfect-scrollbar.css') }}" rel="stylesheet"> --}}
 
 
         <!-- Theme Styles -->
-        <link href="{{ asset('../../assets/css/main.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('../../assets/css/custom.css') }}" rel="stylesheet">
+        <link href="{{ asset('../../assets/js/main.js') }}" rel="stylesheet">
+        <link href="{{ asset('../../assets/css/main.css') }}" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,9 +43,7 @@
         <script src="https://unpkg.com/@popperjs/core@2"></script>
         <script src="{{ asset('../../assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="https://unpkg.com/feather-icons"></script>
-        <script src="{{ asset('../../assets/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script>
-        <script src="{{ asset('../../assets/plugins/apexcharts/apexcharts.min.js') }}"></script>
+        {{-- <script src="{{ asset('../../assets/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script> --}}
         <script src="{{ asset('../../assets/js/main.min.js') }}"></script>
-        <script src="{{ asset('../../assets/js/pages/dashboard.js') }}"></script>
     </body>
 </html>
