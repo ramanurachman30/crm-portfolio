@@ -97,9 +97,9 @@ export default function Authenticated({ user, header, children }) {
                         </li>
                         <li className="sidebar-title">Apps</li>
                         <li>
-                            <a href="email.html">
+                            <Link href={route("contents.index")}>
                                 <i data-feather="inbox"></i>Email
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a href="calendar.html">
