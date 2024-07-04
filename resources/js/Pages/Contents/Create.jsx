@@ -1,3 +1,4 @@
+import SummernoteEditor from "@/Components/SummernoteEditor";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, useForm } from "@inertiajs/react";
 
@@ -65,7 +66,7 @@ export default function Create(props){
                                         </div>
                                         <div className="mb-3">
                                             <label htmlFor="description" className="form-label">Description</label>
-                                            <input
+                                            {/* <input
                                             type="text"
                                             name="description"
                                             className="form-control text-black"
@@ -73,7 +74,9 @@ export default function Create(props){
                                             onChange={(e) =>
                                                 setData("description", e.target.value)
                                             }
-                                            />
+                                            /> */}
+                                            {/* <textarea id="summernote" name="description" className="form-control text-black" value={data.description} onChange={(e) => setData('description', e.target.value)}></textarea> */}
+                                            <SummernoteEditor name="description" className="form-control text-black" value={data.description} onChange={(e) => setData('description', e.target.value)} />
                                             <span className="text-red-600">
                                                 {errors.title}
                                             </span>

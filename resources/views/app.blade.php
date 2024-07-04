@@ -22,6 +22,9 @@
         <!-- Theme Styles -->
         <link href="{{ asset('../../assets/js/main.js') }}" rel="stylesheet">
         <link href="{{ asset('../../assets/css/main.css') }}" rel="stylesheet">
+        <!-- include summernote css/js -->
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,5 +48,8 @@
         <script src="https://unpkg.com/feather-icons"></script>
         {{-- <script src="{{ asset('../../assets/plugins/perfectscroll/perfect-scrollbar.min.js') }}"></script> --}}
         <script src="{{ asset('../../assets/js/main.min.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </body>
 </html>

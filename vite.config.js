@@ -10,4 +10,11 @@ export default defineConfig({
         }),
         react(),
     ],
+    css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "node_modules/summernote/dist/summernote-lite.css";`
+      }
+    }
+  }
 });

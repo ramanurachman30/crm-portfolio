@@ -16,37 +16,16 @@ export default function Authenticated({ user, header, children }) {
                 <div className="page-header">
                     <nav className="navbar navbar-expand-lg d-flex justify-content-between">
                         <div className="" id="navbarNav">
-                            <ul className="navbar-nav" id="leftNav">
-                                <li className="nav-item">
-                                    <a
-                                        className="nav-link"
-                                        id="sidebar-toggle"
-                                        href="#"
-                                    >
-                                        <i data-feather="arrow-left"></i>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        Home
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        Settings
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        Help
-                                    </a>
-                                </li>
-                            </ul>
+                            <div className="">
+                                <h2>My Portofolio</h2>
+                            </div>
                         </div>
-                        <Link href="/">
-                            <ApplicationLogoDashboard className="navbar-brand block h-9 w-auto fill-current text-gray-800" />
-                        </Link>
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
+                            <div className="col">
+                                <Link href="/">
+                                    <ApplicationLogoDashboard className="navbar-brand block h-9 w-auto fill-current text-gray-800" />
+                                </Link>
+                            </div>
                             <div className="ms-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>

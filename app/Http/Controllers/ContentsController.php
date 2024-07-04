@@ -35,6 +35,7 @@ class ContentsController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request->all());
         $request->validate([
             'img' => 'required|image|mimes:jpeg,png,jpg'
         ]);

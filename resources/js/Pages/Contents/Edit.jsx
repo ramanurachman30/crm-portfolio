@@ -1,3 +1,4 @@
+import SummernoteEditor from "@/Components/SummernoteEditor";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, useForm, usePage } from "@inertiajs/react";
 
@@ -7,7 +8,7 @@ export default function Edit(props) {
         name: contents.name || "",
         title: contents.title || "",
         description: contents.description || "",
-        img: null, // Set initial value to null
+        img: contents.img, // Set initial value to null
     });
 
     function handleSubmit(e) {
@@ -27,6 +28,24 @@ export default function Edit(props) {
             }
         });
     }
+
+    function previewImage(input) {
+        var preview = document.getElementById('img-preview');
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            }
+
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none';
+        }
+    }
+
 
     return (
         <Authenticated user={props.auth.user}>
@@ -79,7 +98,7 @@ export default function Edit(props) {
                                         </div>
                                         <div className="mb-3">
                                             <label htmlFor="description" className="form-label">Description</label>
-                                            <input
+                                            {/* <input
                                                 type="text"
                                                 name="description"
                                                 className="form-control text-black"
@@ -87,7 +106,8 @@ export default function Edit(props) {
                                                 onChange={(e) =>
                                                     setData("description", e.target.value)
                                                 }
-                                            />
+                                            /> */}
+                                            <SummernoteEditor name="description" className="form-control text-black" value={data.description} onChange={(e) => setData('description', e.target.value)} />
                                             <span className="text-red-600">
                                                 {errors.description}
                                             </span>
@@ -98,13 +118,15 @@ export default function Edit(props) {
                                                 type="file"
                                                 name="img"
                                                 className="form-control text-black"
-                                                onChange={(e) =>
-                                                    setData("img", e.target.files[0])
-                                                }
+                                                onChange={(e) => {
+                                                    setData("img", e.target.files[0]);
+                                                    previewImage(e.target);
+                                                }}
                                             />
                                             <span className="text-red-600">
                                                 {errors.img}
                                             </span>
+                                            <img id="img-preview" class="img-preview" src={`/storage/${data.img}`} alt="Preview Image" style={{ maxWidth: "300px", maxHeight: "300px" }} />
                                         </div>
                                         <button type="submit" className="btn btn-primary">Submit</button>
                                     </form>
