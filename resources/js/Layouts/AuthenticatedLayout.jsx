@@ -77,17 +77,17 @@ export default function Authenticated({ user, header, children }) {
                         <li className="sidebar-title">Apps</li>
                         <li>
                             <Link href={route("contents.index")}>
-                                <i data-feather="inbox"></i>Email
+                                <i data-feather="inbox"></i>Contents
                             </Link>
                         </li>
                         <li>
-                            <a href="calendar.html">
-                                <i data-feather="calendar"></i>Calendar
-                            </a>
+                            <Link href={route("about_me.index")}>
+                                <i data-feather="calendar"></i>About Me
+                            </Link>
                         </li>
                         <li>
-                            <a href="social.html">
-                                <i data-feather="user"></i>Social
+                            <a href={route("medsoses.index")}>
+                                <i data-feather="user"></i>Media Sosial
                             </a>
                         </li>
                         <li>

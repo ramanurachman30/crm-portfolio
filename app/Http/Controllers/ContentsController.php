@@ -115,7 +115,7 @@ class ContentsController extends Controller
     {
         //
         $contents = Contents::findOrFail($id);
-        if (Storage::exists($contents)) {
+        if (Storage::exists($contents->img)) {
             Storage::delete($contents->img);
         }
         $contents->delete();

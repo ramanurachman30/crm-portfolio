@@ -8,6 +8,7 @@ export default function Index(props){
     function destroy(e) {
         if (confirm("Are you sure you want to destroy")) {
             Inertia.delete(route("contents.destroy", e.currentTarget.id))
+            location.reload();
         }
     }
 
