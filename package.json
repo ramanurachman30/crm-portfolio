@@ -23,6 +23,9 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
         "jquery": "^3.7.1",
-        "react-summernote": "^2.0.2"
+        "react-summernote": "^2.0.2",
+        "slate": "^0.103.0",
+        "slate-react": "^0.107.0",
+        "sweetalert2": "^11.12.2"
     }
 }

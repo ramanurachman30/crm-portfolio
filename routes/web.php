@@ -3,6 +3,7 @@
 use App\Http\Controllers\AbouteMeController;
 use App\Http\Controllers\ContentsController;
 use App\Http\Controllers\MedsosesController;
+use App\Http\Controllers\PortfolioProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -33,5 +34,8 @@ Route::post('/contents/update/{id}', [ContentsController::class, 'update'])->nam
 Route::resource('about_me', AbouteMeController::class);
 Route::resource('medsoses', MedsosesController::class);
 Route::post('/medsoses/update/{id}', [MedsosesController::class, 'update'])->name('medsoses.updateMedsoses');
+
+Route::resource('portfolio-projects', PortfolioProjectController::class);
+Route::post('/portfolio-projects/update/{id}', [PortfolioProjectController::class, 'update'])->name('portfolio-projects.updatePortfolioProjects');
 
 require __DIR__.'/auth.php';

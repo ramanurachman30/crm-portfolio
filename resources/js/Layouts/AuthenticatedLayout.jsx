@@ -86,9 +86,14 @@ export default function Authenticated({ user, header, children }) {
                             </Link>
                         </li>
                         <li>
-                            <a href={route("medsoses.index")}>
+                            <Link href={route("medsoses.index")}>
                                 <i data-feather="user"></i>Media Sosial
-                            </a>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href={route("portfolio-projects.index")}>
+                                <i data-feather="message-circle"></i>Portofolio Projects
+                            </Link>
                         </li>
                         <li>
                             <a href="file-manager.html">
